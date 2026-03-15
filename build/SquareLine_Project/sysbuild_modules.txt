@@ -1,0 +1,2 @@
+"nrf":"/home/hamza/ncs/v3.2.1/nrf":"/home/hamza/ncs/v3.2.1/nrf/sysbuild"
+"mcuboot":"/home/hamza/ncs/v3.2.1/bootloader/mcuboot":"/home/hamza/ncs/v3.2.1/bootloader/mcuboot/boot/zephyr/sysbuild"

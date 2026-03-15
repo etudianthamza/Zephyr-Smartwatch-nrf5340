@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/_sysbuild/sysbuild/images/CMakeFiles/SquareLine_Project"
+		},
+		{
+			"file" : "/home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/_sysbuild/sysbuild/images/CMakeFiles/SquareLine_Project.rule"
+		},
+		{
+			"file" : "/home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/_sysbuild/sysbuild/images/CMakeFiles/SquareLine_Project-complete.rule"
+		},
+		{
+			"file" : "/home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/_sysbuild/sysbuild/images/SquareLine_Project-prefix/src/SquareLine_Project-stamp/SquareLine_Project-build.rule"
+		},
+		{
+			"file" : "/home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/_sysbuild/sysbuild/images/SquareLine_Project-prefix/src/SquareLine_Project-stamp/SquareLine_Project-configure.rule"
+		},
+		{
+			"file" : "/home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/_sysbuild/sysbuild/images/SquareLine_Project-prefix/src/SquareLine_Project-stamp/SquareLine_Project-download.rule"
+		},
+		{
+			"file" : "/home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/_sysbuild/sysbuild/images/SquareLine_Project-prefix/src/SquareLine_Project-stamp/SquareLine_Project-install.rule"
+		},
+		{
+			"file" : "/home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/_sysbuild/sysbuild/images/SquareLine_Project-prefix/src/SquareLine_Project-stamp/SquareLine_Project-mkdir.rule"
+		},
+		{
+			"file" : "/home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/_sysbuild/sysbuild/images/SquareLine_Project-prefix/src/SquareLine_Project-stamp/SquareLine_Project-patch.rule"
+		},
+		{
+			"file" : "/home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/_sysbuild/sysbuild/images/SquareLine_Project-prefix/src/SquareLine_Project-stamp/SquareLine_Project-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"SquareLine_Project"
+		],
+		"name" : "SquareLine_Project"
+	}
+}

@@ -1,0 +1,17 @@
+components/ui_comp_buttonon.c
+components/ui_comp.c
+screens/ui_HomePage.c
+screens/ui_Weather.c
+screens/ui_DirectionMaAxAndGy.c
+screens/ui_Chronometre.c
+ui.c
+components/ui_comp_hook.c
+ui_helpers.c
+images/ui_img_home_page_png.c
+images/ui_img_nav_button_right_circle_28x28_png.c
+images/ui_img_nav_button_left_circle_28x28_png.c
+images/ui_img_rain_png.c
+images/ui_img_weather_png.c
+images/ui_img_logo_pressure_gauge_28x28_png.c
+images/ui_img_logo_compass_28x28_v1_png.c
+images/ui_img_xyz_30x30_exact_png.c

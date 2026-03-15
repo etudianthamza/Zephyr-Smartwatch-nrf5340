@@ -1,0 +1,13 @@
+# Target labels
+ SquareLine_Project
+# Source files and their labels
+/home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/_sysbuild/sysbuild/images/CMakeFiles/SquareLine_Project
+/home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/_sysbuild/sysbuild/images/CMakeFiles/SquareLine_Project.rule
+/home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/_sysbuild/sysbuild/images/CMakeFiles/SquareLine_Project-complete.rule
+/home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/_sysbuild/sysbuild/images/SquareLine_Project-prefix/src/SquareLine_Project-stamp/SquareLine_Project-build.rule
+/home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/_sysbuild/sysbuild/images/SquareLine_Project-prefix/src/SquareLine_Project-stamp/SquareLine_Project-configure.rule
+/home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/_sysbuild/sysbuild/images/SquareLine_Project-prefix/src/SquareLine_Project-stamp/SquareLine_Project-download.rule
+/home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/_sysbuild/sysbuild/images/SquareLine_Project-prefix/src/SquareLine_Project-stamp/SquareLine_Project-install.rule
+/home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/_sysbuild/sysbuild/images/SquareLine_Project-prefix/src/SquareLine_Project-stamp/SquareLine_Project-mkdir.rule
+/home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/_sysbuild/sysbuild/images/SquareLine_Project-prefix/src/SquareLine_Project-stamp/SquareLine_Project-patch.rule
+/home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/_sysbuild/sysbuild/images/SquareLine_Project-prefix/src/SquareLine_Project-stamp/SquareLine_Project-update.rule

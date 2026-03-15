@@ -1,0 +1,7 @@
+default: SquareLine_Project
+build_dir: /home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build
+domains:
+  - name: SquareLine_Project
+    build_dir: /home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/SquareLine_Project
+flash_order:
+  - SquareLine_Project

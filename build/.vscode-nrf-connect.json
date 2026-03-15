@@ -1,0 +1,21 @@
+{
+  "toolchainPath": "/home/hamza/ncs/toolchains/43683a87ea",
+  "sdkPath": "/home/hamza/ncs/v3.2.1",
+  "board": "nrf5340dk/nrf5340/cpuapp",
+  "boardDir": "/home/hamza/ncs/v3.2.1/zephyr/boards/nordic/nrf5340dk",
+  "boardDirs": [
+    "/home/hamza/ncs/v3.2.1/zephyr/boards/nordic/nrf5340dk"
+  ],
+  "optimizations": "none",
+  "cmakeArgs": [
+    "-DSHIELD=adafruit_2_8_tft_touch_v2"
+  ],
+  "confFiles": [
+    "prj.conf"
+  ],
+  "buildDirectory": "build",
+  "kconfigFragments": [],
+  "snippets": [],
+  "dtcOverlays": [],
+  "extraDtcOverlays": []
+}
