@@ -1,112 +1,172 @@
+/*
+ * Copyright (c) 2025 Smartwatch Project
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#include <zephyr/logging/log.h>
 #include <zephyr/kernel.h>
+#include <zephyr/device.h>
 #include <zephyr/drivers/display.h>
+#include <zephyr/input/input.h>
+#include <zephyr/sys/util.h>
 #include <lvgl.h>
 #include "ui/ui.h"
 #include "sensors.h"
+#include <math.h>
+#include <stdlib.h>
 
-#define LOG_LEVEL CONFIG_LOG_DEFAULT_LEVEL
-#include <zephyr/logging/log.h>
-LOG_MODULE_REGISTER(app);
+LOG_MODULE_REGISTER(app, LOG_LEVEL_INF);
 
-/* Array of screen pointers – will be filled after ui_init() */
+// ==================== Configuration tactile ====================
+// Coordonnées supposées (à ajuster après observation des logs)
+#define NEXT_X       226
+#define NEXT_Y       24
+#define PREV_X       226
+#define PREV_Y       315
+#define TOLERANCE    20   // Augmenté pour couvrir une plus grande zone
+
+static const struct device *const touch_dev =
+    DEVICE_DT_GET(DT_NODELABEL(tsc2007_adafruit_2_8_tft_touch_v2));
+
+static struct k_sem touch_sync;
+
+static struct {
+    size_t x;
+    size_t y;
+    bool pressed;
+} touch_point;
+
+static void touch_event_callback(struct input_event *evt, void *user_data)
+{
+    if (evt->code == INPUT_ABS_X) {
+        touch_point.x = evt->value;
+        LOG_DBG("X = %d", evt->value);  // Log debug
+    }
+    if (evt->code == INPUT_ABS_Y) {
+        touch_point.y = evt->value;
+        LOG_DBG("Y = %d", evt->value);
+    }
+    if (evt->code == INPUT_BTN_TOUCH) {
+        touch_point.pressed = evt->value;
+        LOG_DBG("Pressed = %d", evt->value);
+    }
+    if (evt->sync) {
+        LOG_DBG("Sync received");
+        k_sem_give(&touch_sync);
+    }
+}
+
+INPUT_CALLBACK_DEFINE(touch_dev, touch_event_callback, NULL);
+
+// ==================== Écrans et index ====================
 static lv_obj_t *screens[4];
 static int screen_index = 0;
 
-/* Timer callback: switch to next screen with animation */
-static void screen_switch_cb(lv_timer_t *timer)
-{
-    screen_index = (screen_index + 1) % 4;
-    lv_scr_load_anim(screens[screen_index], LV_SCR_LOAD_ANIM_MOVE_LEFT, 300, 0, false);
-}
-
-/* Timer callback: update sensor data and refresh UI */
+// ==================== Mise à jour des capteurs ====================
 static void sensor_update_cb(lv_timer_t *timer)
 {
     sensors_update();
 
-    // Récupérer les valeurs
     float temp = sensors_get_temperature();
-    float hum = sensors_get_humidity();
+    float hum  = sensors_get_humidity();
     float press = sensors_get_pressure();
     float mx, my, mz;
     sensors_get_magn(&mx, &my, &mz);
 
-    // Mise à jour des labels (les variables globales sont déclarées dans les headers)
     char buf[16];
 
-    // Température sur HomePage et Weather
-    snprintf(buf, sizeof(buf), "%.1f°C", temp);
+    snprintf(buf, sizeof(buf), "%.1f°C", (double)temp);
     lv_label_set_text(ui_DegreCeluis, buf);
     lv_label_set_text(ui_DegreCeluis2, buf);
 
-    // Humidité sur Weather
-    snprintf(buf, sizeof(buf), "%.1f%%", hum);
+    snprintf(buf, sizeof(buf), "%.1f%%", (double)hum);
     lv_label_set_text(ui_Label9, buf);
 
-    // Pression sur Weather
-    snprintf(buf, sizeof(buf), "%.1f kPa", press); // ou hPa si vous préférez
+    snprintf(buf, sizeof(buf), "%.1f kPa", (double)press);
     lv_label_set_text(ui_Pressure, buf);
 
-    // Direction (cap magnétique simple)
-    // Calcul de l'angle en degrés à partir de mx, my (plan horizontal)
     float heading = atan2f(my, mx) * 180.0f / 3.14159f;
     if (heading < 0) heading += 360.0f;
-
-    snprintf(buf, sizeof(buf), "%.0f °", heading);
+    snprintf(buf, sizeof(buf), "%.0f °", (double)heading);
     lv_label_set_text(ui_degreDirection, buf);
 
-    // Direction cardinale
     const char *cardinal;
-    if (heading >= 337.5 || heading < 22.5) cardinal = "N";
-    else if (heading < 67.5) cardinal = "NE";
-    else if (heading < 112.5) cardinal = "E";
-    else if (heading < 157.5) cardinal = "SE";
-    else if (heading < 202.5) cardinal = "S";
-    else if (heading < 247.5) cardinal = "SO";
-    else if (heading < 292.5) cardinal = "O";
-    else cardinal = "NO";
+    if (heading >= 337.5f || heading < 22.5f)      cardinal = "N";
+    else if (heading < 67.5f)                      cardinal = "NE";
+    else if (heading < 112.5f)                     cardinal = "E";
+    else if (heading < 157.5f)                     cardinal = "SE";
+    else if (heading < 202.5f)                     cardinal = "S";
+    else if (heading < 247.5f)                     cardinal = "SO";
+    else if (heading < 292.5f)                     cardinal = "O";
+    else                                           cardinal = "NO";
     lv_label_set_text(ui_direction, cardinal);
-
-    // (Optionnel) Mise à jour de l'accélération si vous avez un écran dédié
-    // float ax, ay, az; sensors_get_accel(&ax, &ay, &az);
-    // ...
 }
 
+// ==================== Programme principal ====================
 int main(void)
 {
-    const struct device *display_dev;
-
-    display_dev = DEVICE_DT_GET(DT_CHOSEN(zephyr_display));
-if (!device_is_ready(display_dev)) {
-    printk("Display device not ready\n");
-    return 0;
-}
-printk("Display %s is ready\n", display_dev->name);
+    // ---- Initialisation de l'affichage ----
+    const struct device *display_dev = DEVICE_DT_GET(DT_CHOSEN(zephyr_display));
+    if (!device_is_ready(display_dev)) {
+        LOG_ERR("Display device not ready");
+        return 0;
+    }
     display_blanking_off(display_dev);
 
-    /* Initialize UI */
     ui_init();
-
-    /* Populate screen array */
     screens[0] = ui_HomePage;
     screens[1] = ui_Weather;
     screens[2] = ui_DirectionMaAxAndGy;
     screens[3] = ui_Chronometre;
 
-    /* Initialize sensors */
     if (sensors_init() != 0) {
-        LOG_ERR("Sensor initialization failed");
-        // On peut continuer quand même, mais les valeurs resteront à zéro
+        LOG_ERR("Sensor initialization failed (continuing anyway)");
     }
 
-    /* Create timers */
-    lv_timer_create(screen_switch_cb, 5000, NULL);   // changement d'écran toutes les 5s
-    lv_timer_create(sensor_update_cb, 2000, NULL);   // mise à jour capteurs toutes les 2s
+    // ---- Initialisation du tactile ----
+    if (!device_is_ready(touch_dev)) {
+        LOG_ERR("Touch device %s not ready", touch_dev->name);
+    } else {
+        LOG_INF("Touch device %s ready", touch_dev->name);
+    }
+    k_sem_init(&touch_sync, 0, 1);
 
-    /* Main loop */
+    lv_timer_create(sensor_update_cb, 2000, NULL);   // capteurs toutes les 2s
+
+    LOG_INF("Entering main loop");
+
     while (1) {
         lv_timer_handler();
+
+        // Vérification non bloquante du sémaphore tactile
+        if (k_sem_take(&touch_sync, K_NO_WAIT) == 0) {
+            // Copie des données sous protection implicite (pas de concurrence car callback fini)
+            size_t x = touch_point.x;
+            size_t y = touch_point.y;
+            bool pressed = touch_point.pressed;
+
+            LOG_INF("Touch event: pressed=%d, x=%d, y=%d", pressed, x, y);
+
+            if (pressed) {
+                // Vérification des zones
+                if (abs((int)x - NEXT_X) < TOLERANCE && abs((int)y - NEXT_Y) < TOLERANCE) {
+                    LOG_INF("NEXT zone detected -> switching to next screen");
+                    screen_index = (screen_index + 1) % 4;
+                    lv_scr_load_anim(screens[screen_index], LV_SCR_LOAD_ANIM_MOVE_LEFT, 300, 0, false);
+                }
+                else if (abs((int)x - PREV_X) < TOLERANCE && abs((int)y - PREV_Y) < TOLERANCE) {
+                    LOG_INF("PREV zone detected -> switching to previous screen");
+                    screen_index = (screen_index - 1 + 4) % 4;
+                    lv_scr_load_anim(screens[screen_index], LV_SCR_LOAD_ANIM_MOVE_RIGHT, 300, 0, false);
+                } else {
+                    LOG_INF("Touch at (%d,%d) does not match any zone", x, y);
+                }
+            }
+        }
+
         k_sleep(K_MSEC(10));
     }
+
     return 0;
 }

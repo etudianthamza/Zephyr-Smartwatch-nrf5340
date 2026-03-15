@@ -1337,6 +1337,7 @@ zephyr_udc0: &usbd {
     status = "okay";
 };
 
+
 # 1 "/home/hamza/ncs/v3.2.1/zephyr/dts/vendor/nordic/nrf5340_cpuapp_partition.dtsi" 1 3 4
 # 10 "/home/hamza/ncs/v3.2.1/zephyr/dts/vendor/nordic/nrf5340_cpuapp_partition.dtsi" 3 4
 &flash0 {
@@ -1422,7 +1423,7 @@ zephyr_udc0: &usbd {
  };
 };
 # 40 "/home/hamza/ncs/v3.2.1/zephyr/dts/vendor/nordic/nrf5340_cpuapp_partition.dtsi" 2 3 4
-# 58 "/home/hamza/ncs/v3.2.1/zephyr/boards/nordic/nrf5340dk/nrf5340dk_nrf5340_cpuapp.dts" 2
+# 59 "/home/hamza/ncs/v3.2.1/zephyr/boards/nordic/nrf5340dk/nrf5340dk_nrf5340_cpuapp.dts" 2
 # 0 "<command-line>" 2
 # 1 "/home/hamza/ncs/v3.2.1/zephyr/boards/shields/adafruit_2_8_tft_touch_v2/adafruit_2_8_tft_touch_v2.overlay" 1
 
