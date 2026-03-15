@@ -44,9 +44,11 @@ case K_OBJ_SENSOR_DECODER_API: ret = "sensor_decoder_api"; break;
 #endif
 /* Driver subsystems */
 case K_OBJ_DRIVER_COUNTER: ret = "counter driver"; break;
+case K_OBJ_DRIVER_ENTROPY: ret = "entropy driver"; break;
 case K_OBJ_DRIVER_GPIO: ret = "gpio driver"; break;
 case K_OBJ_DRIVER_I2C: ret = "i2c driver"; break;
 case K_OBJ_DRIVER_I2C_TARGET: ret = "i2c_target driver"; break;
+case K_OBJ_DRIVER_MBOX: ret = "mbox driver"; break;
 case K_OBJ_DRIVER_SENSOR: ret = "sensor driver"; break;
 case K_OBJ_DRIVER_SPI: ret = "spi driver"; break;
 case K_OBJ_DRIVER_SHARED_IRQ: ret = "shared_irq driver"; break;
@@ -71,7 +73,6 @@ case K_OBJ_DRIVER_EEPROM: ret = "eeprom driver"; break;
 case K_OBJ_DRIVER_EMUL_BBRAM: ret = "emul_bbram driver"; break;
 case K_OBJ_DRIVER_FUEL_GAUGE_EMUL: ret = "fuel_gauge_emul driver"; break;
 case K_OBJ_DRIVER_EMUL_SENSOR: ret = "emul_sensor driver"; break;
-case K_OBJ_DRIVER_ENTROPY: ret = "entropy driver"; break;
 case K_OBJ_DRIVER_ESPI: ret = "espi driver"; break;
 case K_OBJ_DRIVER_ESPI_SAF: ret = "espi_saf driver"; break;
 case K_OBJ_DRIVER_FLASH: ret = "flash driver"; break;
@@ -86,7 +87,6 @@ case K_OBJ_DRIVER_IPM: ret = "ipm driver"; break;
 case K_OBJ_DRIVER_LED: ret = "led driver"; break;
 case K_OBJ_DRIVER_LED_STRIP: ret = "led_strip driver"; break;
 case K_OBJ_DRIVER_LORA: ret = "lora driver"; break;
-case K_OBJ_DRIVER_MBOX: ret = "mbox driver"; break;
 case K_OBJ_DRIVER_MDIO: ret = "mdio driver"; break;
 case K_OBJ_DRIVER_MIPI_DBI: ret = "mipi_dbi driver"; break;
 case K_OBJ_DRIVER_MIPI_DSI: ret = "mipi_dsi driver"; break;

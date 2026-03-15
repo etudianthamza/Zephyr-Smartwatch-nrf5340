@@ -145,6 +145,22 @@
     ],
     [
         [
+            "void sys_rand_get",
+            "void *dst, size_t len"
+        ],
+        "random.h",
+        true
+    ],
+    [
+        [
+            "int sys_csrand_get",
+            "void *dst, size_t len"
+        ],
+        "random.h",
+        true
+    ],
+    [
+        [
             "bool counter_is_counting_up",
             "const struct device *dev"
         ],
@@ -289,6 +305,14 @@
     ],
     [
         [
+            "int entropy_get_entropy",
+            "const struct device *dev,\n\t\t\t\t  uint8_t *buffer,\n\t\t\t\t  uint16_t length"
+        ],
+        "entropy.h",
+        true
+    ],
+    [
+        [
             "int gpio_pin_interrupt_configure",
             "const struct device *port,\n\t\t\t\t\t   gpio_pin_t pin,\n\t\t\t\t\t   gpio_flags_t flags"
         ],
@@ -413,6 +437,38 @@
             "const struct device *dev"
         ],
         "i2c.h",
+        true
+    ],
+    [
+        [
+            "int mbox_send",
+            "const struct device *dev, mbox_channel_id_t channel_id,\n\t\t\tconst struct mbox_msg *msg"
+        ],
+        "mbox.h",
+        true
+    ],
+    [
+        [
+            "int mbox_mtu_get",
+            "const struct device *dev"
+        ],
+        "mbox.h",
+        true
+    ],
+    [
+        [
+            "int mbox_set_enabled",
+            "const struct device *dev,\n\t\t\t       mbox_channel_id_t channel_id, bool enabled"
+        ],
+        "mbox.h",
+        true
+    ],
+    [
+        [
+            "uint32_t mbox_max_channels_get",
+            "const struct device *dev"
+        ],
+        "mbox.h",
         true
     ],
     [
@@ -2209,14 +2265,6 @@
     ],
     [
         [
-            "int entropy_get_entropy",
-            "const struct device *dev,\n\t\t\t\t  uint8_t *buffer,\n\t\t\t\t  uint16_t length"
-        ],
-        "entropy.h",
-        false
-    ],
-    [
-        [
             "int espi_config",
             "const struct device *dev, struct espi_cfg *cfg"
         ],
@@ -2853,38 +2901,6 @@
             "const struct device *dev, uint32_t led"
         ],
         "led.h",
-        false
-    ],
-    [
-        [
-            "int mbox_send",
-            "const struct device *dev, mbox_channel_id_t channel_id,\n\t\t\tconst struct mbox_msg *msg"
-        ],
-        "mbox.h",
-        false
-    ],
-    [
-        [
-            "int mbox_mtu_get",
-            "const struct device *dev"
-        ],
-        "mbox.h",
-        false
-    ],
-    [
-        [
-            "int mbox_set_enabled",
-            "const struct device *dev,\n\t\t\t       mbox_channel_id_t channel_id, bool enabled"
-        ],
-        "mbox.h",
-        false
-    ],
-    [
-        [
-            "uint32_t mbox_max_channels_get",
-            "const struct device *dev"
-        ],
-        "mbox.h",
         false
     ],
     [
@@ -4533,22 +4549,6 @@
             "const struct net_socket_service_desc *service,\n\t\t\t\t\t  struct zsock_pollfd *fds, int len, void *user_data"
         ],
         "socket_service.h",
-        false
-    ],
-    [
-        [
-            "void sys_rand_get",
-            "void *dst, size_t len"
-        ],
-        "random.h",
-        false
-    ],
-    [
-        [
-            "int sys_csrand_get",
-            "void *dst, size_t len"
-        ],
-        "random.h",
         false
     ],
     [

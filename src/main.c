@@ -12,9 +12,10 @@
 #include <zephyr/sys/util.h>
 #include <lvgl.h>
 #include "ui/ui.h"
-#include "sensors.h"
+#include "All_sensors/sensors.h"
 #include <math.h>
 #include <stdlib.h>
+#include "BLE/BLE_Configuration.h"
 
 LOG_MODULE_REGISTER(app, LOG_LEVEL_INF);
 
@@ -103,6 +104,32 @@ static void sensor_update_cb(lv_timer_t *timer)
     lv_label_set_text(ui_direction, cardinal);
 }
 
+/* ==================== Tâche BLE ==================== */
+#define BLE_STACK_SIZE 1024
+K_THREAD_STACK_DEFINE(ble_stack_area, BLE_STACK_SIZE);
+static struct k_thread ble_thread;
+
+static void ble_thread_fn(void *p1, void *p2, void *p3)
+{
+    while (1) {
+        /* Pause pour laisser le temps aux capteurs de s'initialiser et pour espacer les envois */
+        k_sleep(K_SECONDS(2));
+
+        /* Récupérer les dernières valeurs des capteurs */
+        float temp = sensors_get_temperature();
+        float hum  = sensors_get_humidity();
+
+        /* Construire le payload BLE */
+        struct ble_env_payload payload;
+        payload.epoch_s = (uint32_t)(k_uptime_get() / 1000);
+        payload.temp_cC = (int16_t)(temp * 100.0f);   // conversion en centi-degrés
+        payload.hum_cpc = (uint16_t)(hum * 100.0f);   // conversion en centi-pourcents
+
+        /* Envoyer une notification si connecté, et mettre à jour le nom d'advertising */
+        ble_send_env_payload(&payload);
+        ble_update_advertising(&payload);
+    }
+}
 // ==================== Programme principal ====================
 int main(void)
 {
@@ -134,6 +161,19 @@ int main(void)
 
     lv_timer_create(sensor_update_cb, 2000, NULL);   // capteurs toutes les 2s
 
+    /* ---- Initialisation BLE ---- */
+    if (ble_init() != 0) {
+        LOG_ERR("BLE initialization failed");
+    } else {
+        LOG_INF("BLE initialized");
+    }
+
+    /* Création du thread BLE */
+    k_thread_create(&ble_thread, ble_stack_area, BLE_STACK_SIZE,
+                    ble_thread_fn, NULL, NULL, NULL,
+                    4, 0, K_NO_WAIT);
+    k_thread_name_set(&ble_thread, "ble");
+
     LOG_INF("Entering main loop");
 
     while (1) {
@@ -141,7 +181,7 @@ int main(void)
 
         // Vérification non bloquante du sémaphore tactile
         if (k_sem_take(&touch_sync, K_NO_WAIT) == 0) {
-            // Copie des données sous protection implicite (pas de concurrence car callback fini)
+            // Copie des données sous protection implicite
             size_t x = touch_point.x;
             size_t y = touch_point.y;
             bool pressed = touch_point.pressed;

@@ -12,7 +12,7 @@ set(LVGL_DIR ${ZEPHYR_LVGL_MODULE_DIR})
 
 FILE(GLOB app_sources src/*.c src/ui/*.c src/ui/images/*.c src/ui/fonts/*.c src/ui/screens/*.c src/ui/components/*.c)
 target_sources(app PRIVATE ${app_sources})
-target_sources(app PRIVATE src/sensors.c)
-
+target_sources(app PRIVATE src/All_sensors/sensors.c)
+target_sources(app PRIVATE src/BLE/BLE_Configuration.c)
 
 
