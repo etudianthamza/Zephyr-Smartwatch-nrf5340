@@ -14,5 +14,7 @@ FILE(GLOB app_sources src/*.c src/ui/*.c src/ui/images/*.c src/ui/fonts/*.c src/
 target_sources(app PRIVATE ${app_sources})
 target_sources(app PRIVATE src/All_sensors/sensors.c)
 target_sources(app PRIVATE src/BLE/BLE_Configuration.c)
+target_sources(app PRIVATE src/Chronometer/chrono.c)
+target_sources(app PRIVATE src/RTC/rtc.c)
 
 

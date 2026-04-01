@@ -78,8 +78,14 @@ CONFIG_DEBUG_THREAD_INFO:UNINITIALIZED=y
 //No help, variable specified on the command line.
 CONF_FILE:UNINITIALIZED=prj.conf
 
+//No help, variable specified on the command line.
+DEBUG_THREAD_INFO:UNINITIALIZED=On
+
 //Selected shield
 SHIELD:STRING=adafruit_2_8_tft_touch_v2
+
+//No help, variable specified on the command line.
+SquareLine_Project_DEBUG_THREAD_INFO:UNINITIALIZED=On
 
 //No help, variable specified on the command line.
 WEST_PYTHON:UNINITIALIZED=/home/hamza/ncs/toolchains/43683a87ea/usr/local/bin/python3.12

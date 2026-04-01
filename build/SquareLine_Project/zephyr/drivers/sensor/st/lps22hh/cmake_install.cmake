@@ -1,4 +1,4 @@
-# Install script for directory: /home/hamza/ncs/v3.2.1/zephyr/drivers/sensor/st/lps25hb
+# Install script for directory: /home/hamza/ncs/v3.2.1/zephyr/drivers/sensor/st/lps22hh
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

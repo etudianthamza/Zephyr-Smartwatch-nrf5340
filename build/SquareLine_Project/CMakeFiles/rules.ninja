@@ -698,7 +698,7 @@ rule C_STATIC_LIBRARY_LINKER__drivers__sensor__st__hts221_
 #############################################
 # Rule for compiling C files.
 
-rule C_COMPILER__drivers__sensor__st__lis3mdl_
+rule C_COMPILER__drivers__sensor__st__lis2mdl_
   depfile = $DEP_FILE
   deps = gcc
   command = ccache /home/hamza/ncs/toolchains/43683a87ea/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -708,7 +708,7 @@ rule C_COMPILER__drivers__sensor__st__lis3mdl_
 #############################################
 # Rule for linking C static library.
 
-rule C_STATIC_LIBRARY_LINKER__drivers__sensor__st__lis3mdl_
+rule C_STATIC_LIBRARY_LINKER__drivers__sensor__st__lis2mdl_
   command = $PRE_LINK && ccache /home/hamza/ncs/toolchains/43683a87ea/usr/local/bin/cmake -E rm -f $TARGET_FILE && ccache /home/hamza/ncs/toolchains/43683a87ea/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/hamza/ncs/toolchains/43683a87ea/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
   description = Linking C static library $TARGET_FILE
   restat = $RESTAT
@@ -717,7 +717,7 @@ rule C_STATIC_LIBRARY_LINKER__drivers__sensor__st__lis3mdl_
 #############################################
 # Rule for compiling C files.
 
-rule C_COMPILER__drivers__sensor__st__lps25hb_
+rule C_COMPILER__drivers__sensor__st__lps22hh_
   depfile = $DEP_FILE
   deps = gcc
   command = ccache /home/hamza/ncs/toolchains/43683a87ea/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -727,7 +727,7 @@ rule C_COMPILER__drivers__sensor__st__lps25hb_
 #############################################
 # Rule for linking C static library.
 
-rule C_STATIC_LIBRARY_LINKER__drivers__sensor__st__lps25hb_
+rule C_STATIC_LIBRARY_LINKER__drivers__sensor__st__lps22hh_
   command = $PRE_LINK && ccache /home/hamza/ncs/toolchains/43683a87ea/usr/local/bin/cmake -E rm -f $TARGET_FILE && ccache /home/hamza/ncs/toolchains/43683a87ea/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/hamza/ncs/toolchains/43683a87ea/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
   description = Linking C static library $TARGET_FILE
   restat = $RESTAT
@@ -736,7 +736,7 @@ rule C_STATIC_LIBRARY_LINKER__drivers__sensor__st__lps25hb_
 #############################################
 # Rule for compiling C files.
 
-rule C_COMPILER__drivers__sensor__st__lsm6ds0_
+rule C_COMPILER__drivers__sensor__st__lsm6dso_
   depfile = $DEP_FILE
   deps = gcc
   command = ccache /home/hamza/ncs/toolchains/43683a87ea/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -746,7 +746,7 @@ rule C_COMPILER__drivers__sensor__st__lsm6ds0_
 #############################################
 # Rule for linking C static library.
 
-rule C_STATIC_LIBRARY_LINKER__drivers__sensor__st__lsm6ds0_
+rule C_STATIC_LIBRARY_LINKER__drivers__sensor__st__lsm6dso_
   command = $PRE_LINK && ccache /home/hamza/ncs/toolchains/43683a87ea/usr/local/bin/cmake -E rm -f $TARGET_FILE && ccache /home/hamza/ncs/toolchains/43683a87ea/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-ar qc $TARGET_FILE $LINK_FLAGS $in && ccache /home/hamza/ncs/toolchains/43683a87ea/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-ranlib $TARGET_FILE && $POST_BUILD
   description = Linking C static library $TARGET_FILE
   restat = $RESTAT

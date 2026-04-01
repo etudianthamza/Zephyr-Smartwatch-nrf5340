@@ -1,4 +1,4 @@
-# Install script for directory: /home/hamza/ncs/v3.2.1/zephyr/drivers/sensor/st/lis3mdl
+# Install script for directory: /home/hamza/ncs/v3.2.1/zephyr/drivers/sensor/st/lis2mdl
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

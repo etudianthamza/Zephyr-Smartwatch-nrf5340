@@ -49,16 +49,16 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/SquareLine_Project/zephyr/drivers/sensor/st/lis3mdl/cmake_install.cmake")
+  include("/home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/SquareLine_Project/zephyr/drivers/sensor/st/lis2mdl/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/SquareLine_Project/zephyr/drivers/sensor/st/lps25hb/cmake_install.cmake")
+  include("/home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/SquareLine_Project/zephyr/drivers/sensor/st/lps22hh/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/SquareLine_Project/zephyr/drivers/sensor/st/lsm6ds0/cmake_install.cmake")
+  include("/home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/SquareLine_Project/zephyr/drivers/sensor/st/lsm6dso/cmake_install.cmake")
 endif()
 
