@@ -201,10 +201,15 @@ static void chrono_update_display(lv_timer_t *timer)
     char buf[3];
     snprintf(buf, sizeof(buf), "%02d", h);
     if (ui_LabelHH) lv_label_set_text(ui_LabelHH, buf);
+    else LOG_ERR("chrono_update: ui_LabelHH NULL");
+
     snprintf(buf, sizeof(buf), "%02d", m);
     if (ui_LabelMM) lv_label_set_text(ui_LabelMM, buf);
+    else LOG_ERR("chrono_update: ui_LabelMM NULL");
+
     snprintf(buf, sizeof(buf), "%02d", s);
     if (ui_LabelSS) lv_label_set_text(ui_LabelSS, buf);
+    else LOG_ERR("chrono_update: ui_LabelSS NULL");
 }
 
 // ==================== Mise à jour LVGL de l'heure / date ====================
@@ -291,9 +296,9 @@ int main(void)
         // Optionnel : régler l'heure initiale
         rtc_time_t initial_time = {
             .seconds = 0,
-            .minutes = 30,
-            .hours   = 14,
-            .days    = 1,
+            .minutes = 15,
+            .hours   = 10,
+            .days    = 3,
             .weekday = 3,
             .months  = 4,
             .years   = 26

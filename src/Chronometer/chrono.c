@@ -7,10 +7,10 @@
 LOG_MODULE_REGISTER(chrono_mod, LOG_LEVEL_INF);
 
 // Variables modifiées par le thread et lues par le timer LVGL
-static volatile int hours;    // [MODIF] volatile
-static volatile int minutes;  // [MODIF] volatile
-static volatile int seconds;  // [MODIF] volatile
-static volatile bool running; // [MODIF] volatile
+static volatile int hours;    
+static volatile int minutes;  
+static volatile int seconds;  
+static volatile bool running; 
 
 #define STACK_SIZE 512
 #define PRIORITY 5
@@ -41,8 +41,6 @@ static void chrono_thread_fn(void *a, void *b, void *c)
             minutes = 0;
             hours++;
         }
-
-        // [SUPPRESSION] printk() -> plus nécessaire, la mise à jour se fait par LVGL
     }
 }
 
@@ -92,11 +90,9 @@ void chrono_reset(void)
     LOG_INF("Chrono remis a zero: %02d:%02d:%02d", hours, minutes, seconds);
 }
 
-// [AJOUT] Récupération des valeurs actuelles
 void chrono_get_time(int *h, int *m, int *s)
 {
     *h = hours;
     *m = minutes;
     *s = seconds;
 }
-// [FIN AJOUT]
