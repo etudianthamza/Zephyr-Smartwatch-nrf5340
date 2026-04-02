@@ -290,7 +290,7 @@ float sensors_get_humidity(void)
 
 float sensors_get_pressure(void)
 {
-    return sensor_value_to_double(&press_val);
+    return sensor_value_to_double(&press_val)* 10.0f;
 }
 
 void sensors_get_magn(float *x, float *y, float *z)

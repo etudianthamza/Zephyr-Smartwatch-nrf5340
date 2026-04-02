@@ -6,11 +6,10 @@
 
 LOG_MODULE_REGISTER(chrono_mod, LOG_LEVEL_INF);
 
-// Variables modifiées par le thread et lues par le timer LVGL
-static volatile int hours;    
-static volatile int minutes;  
-static volatile int seconds;  
-static volatile bool running; 
+static volatile int hours;
+static volatile int minutes;
+static volatile int seconds;
+static volatile bool running;
 
 #define STACK_SIZE 512
 #define PRIORITY 5
@@ -18,6 +17,14 @@ static volatile bool running;
 K_THREAD_STACK_DEFINE(chrono_stack, STACK_SIZE);
 static struct k_thread chrono_thread;
 static k_tid_t chrono_tid;
+
+/* Pointeur de fonction pour le callback */
+static void (*tick_callback)(void) = NULL;
+
+void chrono_set_tick_callback(void (*callback)(void))
+{
+    tick_callback = callback;
+}
 
 static void chrono_thread_fn(void *a, void *b, void *c)
 {
@@ -40,6 +47,11 @@ static void chrono_thread_fn(void *a, void *b, void *c)
         if (minutes >= 60) {
             minutes = 0;
             hours++;
+        }
+
+        /* Appeler le callback s'il est défini */
+        if (tick_callback != NULL) {
+            tick_callback();
         }
     }
 }
