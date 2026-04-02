@@ -7,6 +7,8 @@
 #include <string.h>
 #include "BLE_Configuration.h"
 
+/* declaration externe */
+extern void ble_led_blink(void);
 /*---------------------------------------------------------------------------*
  *  UUIDs personnalisés 128 bits
  *---------------------------------------------------------------------------*/
@@ -138,7 +140,7 @@ void ble_send_env_payload(const struct ble_env_payload *payload)
     if (err) {
         printk("bt_gatt_notify error %d\n", err);
     } else {
-        printk("BLE notification sent\n");
+        printk("BLE notification sent\n"); 
     }
 }
 

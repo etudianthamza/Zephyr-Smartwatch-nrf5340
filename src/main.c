@@ -6,6 +6,8 @@
 
 #include <zephyr/logging/log.h>
 #include <zephyr/kernel.h>
+#include <zephyr/drivers/gpio.h>
+#include <dk_buttons_and_leds.h>
 #include <zephyr/device.h>
 #include <zephyr/drivers/display.h>
 #include <zephyr/input/input.h>
@@ -32,6 +34,22 @@ static const struct device *const touch_dev =
     DEVICE_DT_GET(DT_NODELABEL(tsc2007_adafruit_2_8_tft_touch_v2));
 
 static struct k_sem touch_sync;
+
+// ==================== LED BLE ====================
+#define BLE_LED DK_LED1             
+static struct k_timer ble_led_timer;
+
+static void ble_led_timer_handler(struct k_timer *timer)
+{
+    dk_set_led_off(BLE_LED);
+}
+
+void ble_led_blink(void)
+{
+    LOG_INF("BLE LED blink requested"); 
+    dk_set_led_on(BLE_LED);
+    k_timer_start(&ble_led_timer, K_MSEC(100), K_NO_WAIT);
+}
 
 static struct {
     size_t x;
@@ -171,6 +189,7 @@ static void ble_thread_fn(void *p1, void *p2, void *p3)
         payload.temp_cC = (int16_t)(temp * 100.0f);
         payload.hum_cpc = (uint16_t)(hum * 100.0f);
 
+        ble_led_blink(); 
         ble_send_env_payload(&payload);
         ble_update_advertising(&payload);
     }
@@ -285,7 +304,21 @@ int main(void)
     if (sensors_init() != 0) {
         LOG_ERR("Sensor initialization failed (continuing anyway)");
     }
+    
+        // ---- Initialisation des LEDs ----
+    if (dk_leds_init() != 0) {
+        LOG_ERR("LEDs init failed");
+    } else {
+        LOG_INF("LEDs initialized");
+        dk_set_led_on(DK_LED1);          
+        k_sleep(K_MSEC(500));
+        dk_set_led_off(DK_LED1);
+        LOG_INF("LED1 tested on/off");
+    }
 
+    // ---- Timer pour la LED BLE ----
+    k_timer_init(&ble_led_timer, ble_led_timer_handler, NULL);
+    
     // ---- Initialisation du chronomètre ----
     chrono_init();
 

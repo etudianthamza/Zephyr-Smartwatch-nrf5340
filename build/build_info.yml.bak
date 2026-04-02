@@ -1,6 +1,4 @@
 cmake:
-  application:
-    source-dir: '/home/hamza/ncs/v3.2.1/zephyr/share/sysbuild'
   board:
     name: 'nrf5340dk'
     path:
@@ -17,7 +15,6 @@ cmake:
      - '/home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/_sysbuild/empty.conf'
     user-files:
      - '/home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/_sysbuild/empty.conf'
-  sysbuild: 'true'
 version: '0.1.0'
 west:
   command: '/home/hamza/ncs/toolchains/43683a87ea/usr/local/bin/west build --build-dir /home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build /home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project --pristine --board nrf5340dk/nrf5340/cpuapp -- -DCONF_FILE=prj.conf -DDEBUG_THREAD_INFO=On -DCONFIG_DEBUG_THREAD_INFO=y -DSHIELD=adafruit_2_8_tft_touch_v2 -DSquareLine_Project_DEBUG_THREAD_INFO=On'

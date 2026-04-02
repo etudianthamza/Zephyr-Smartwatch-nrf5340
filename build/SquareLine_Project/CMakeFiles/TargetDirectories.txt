@@ -941,6 +941,13 @@
 /home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/SquareLine_Project/modules/nrf/lib/bin/CMakeFiles/rebuild_cache.dir
 /home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/SquareLine_Project/modules/nrf/lib/bin/CMakeFiles/list_install_components.dir
 /home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/SquareLine_Project/modules/nrf/lib/bin/CMakeFiles/install.dir
+/home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/SquareLine_Project/modules/nrf/lib/dk_buttons_and_leds/CMakeFiles/install/strip.dir
+/home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/SquareLine_Project/modules/nrf/lib/dk_buttons_and_leds/CMakeFiles/install/local.dir
+/home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/SquareLine_Project/modules/nrf/lib/dk_buttons_and_leds/CMakeFiles/install.dir
+/home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/SquareLine_Project/modules/nrf/lib/dk_buttons_and_leds/CMakeFiles/list_install_components.dir
+/home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/SquareLine_Project/modules/nrf/lib/dk_buttons_and_leds/CMakeFiles/..__nrf__lib__dk_buttons_and_leds.dir
+/home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/SquareLine_Project/modules/nrf/lib/dk_buttons_and_leds/CMakeFiles/edit_cache.dir
+/home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/SquareLine_Project/modules/nrf/lib/dk_buttons_and_leds/CMakeFiles/rebuild_cache.dir
 /home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/SquareLine_Project/modules/nrf/lib/flash_patch/CMakeFiles/install/strip.dir
 /home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/SquareLine_Project/modules/nrf/lib/flash_patch/CMakeFiles/install/local.dir
 /home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/SquareLine_Project/modules/nrf/lib/flash_patch/CMakeFiles/edit_cache.dir

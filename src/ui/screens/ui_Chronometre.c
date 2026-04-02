@@ -55,11 +55,11 @@ void ui_Chronometre_screen_init(void)
     lv_obj_set_style_text_opa(ui_chronometer, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_font(ui_chronometer, &lv_font_montserrat_18, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    ui_Arc1 = lv_arc_create(ui_Chronometre);
+    /*ui_Arc1 = lv_arc_create(ui_Chronometre);
     lv_obj_set_width(ui_Arc1, 183);
     lv_obj_set_height(ui_Arc1, 180);
     lv_obj_set_align(ui_Arc1, LV_ALIGN_CENTER);
-    //lv_arc_set_value(ui_Arc1, 50);
+    lv_arc_set_value(ui_Arc1, 50);*/
 
     ui_ConterContainer = lv_obj_create(ui_Chronometre);
     lv_obj_remove_style_all(ui_ConterContainer);
