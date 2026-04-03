@@ -1517,15 +1517,15 @@ zephyr_udc0: &usbd {
   compatible = "st,hts221";
   reg = <0x5f>;
  };
- lis3mdl: lis3mdl@1e {
+ lis2mdl: lis2mdl@1e {
   compatible = "st,lis2mdl";
   reg = <0x1e>;
  };
- lps25hb: lps25hb@5d {
+ lps22hh: lps22hh@5d {
   compatible = "st,lps22hh";
   reg = <0x5d>;
  };
- lsm6ds0: lsm6ds0@6b {
+ lsm6dso: lsm6dso@6b {
   compatible = "st,lsm6dso";
   reg = <0x6b>;
  };

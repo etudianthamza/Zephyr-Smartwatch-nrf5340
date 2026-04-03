@@ -35,18 +35,18 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 Determining if files stdatomic.h exist passed with the following output:
 Change Dir: /home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/SquareLine_Project/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/home/hamza/ncs/toolchains/43683a87ea/usr/local/bin/ninja cmTC_89a19 && [1/2] Building C object CMakeFiles/cmTC_89a19.dir/HAVE_STDATOMIC_H.c.obj
-[2/2] Linking C executable cmTC_89a19
-arm-zephyr-eabi-gcc: warning: CMakeFiles/cmTC_89a19.dir/HAVE_STDATOMIC_H.c.obj: linker input file unused because linking not done
+Run Build Command(s):/home/hamza/ncs/toolchains/43683a87ea/usr/local/bin/ninja cmTC_fe9fc && [1/2] Building C object CMakeFiles/cmTC_fe9fc.dir/HAVE_STDATOMIC_H.c.obj
+[2/2] Linking C executable cmTC_fe9fc
+arm-zephyr-eabi-gcc: warning: CMakeFiles/cmTC_fe9fc.dir/HAVE_STDATOMIC_H.c.obj: linker input file unused because linking not done
 
 
 
 Determining if files fcntl.h exist passed with the following output:
 Change Dir: /home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/build/SquareLine_Project/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/home/hamza/ncs/toolchains/43683a87ea/usr/local/bin/ninja cmTC_f0852 && [1/2] Building C object CMakeFiles/cmTC_f0852.dir/HAVE_FCNTL_H.c.obj
-[2/2] Linking C executable cmTC_f0852
-arm-zephyr-eabi-gcc: warning: CMakeFiles/cmTC_f0852.dir/HAVE_FCNTL_H.c.obj: linker input file unused because linking not done
+Run Build Command(s):/home/hamza/ncs/toolchains/43683a87ea/usr/local/bin/ninja cmTC_66b63 && [1/2] Building C object CMakeFiles/cmTC_66b63.dir/HAVE_FCNTL_H.c.obj
+[2/2] Linking C executable cmTC_66b63
+arm-zephyr-eabi-gcc: warning: CMakeFiles/cmTC_66b63.dir/HAVE_FCNTL_H.c.obj: linker input file unused because linking not done
 
 
 
