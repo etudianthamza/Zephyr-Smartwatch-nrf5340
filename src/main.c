@@ -247,7 +247,7 @@ static void update_ui_sensors(void)
     snprintf(buf, sizeof(buf), "%.1f hPa", (double)press);
     if (ui_Pressure) lv_label_set_text(ui_Pressure, buf);
 
-    float heading = atan2f(my, mx) * 180.0f / 3.14159f;
+    float heading = atan2f(-my, mx) * 180.0f / 3.14159f;
     if (heading < 0) heading += 360.0f;
     snprintf(buf, sizeof(buf), "%.0f °", (double)heading);
     if (ui_degreDirection) lv_label_set_text(ui_degreDirection, buf);
@@ -411,7 +411,7 @@ int main(void)
     if (sensors_init() != 0) {
         LOG_ERR("Sensor initialization failed (continuing anyway)");
     }
-
+    
     // ---- Initialisation des LEDs ----
     if (dk_leds_init() != 0) {
         LOG_ERR("LEDs init failed");
@@ -520,8 +520,9 @@ int main(void)
 
         if (acq_flag && !system_sleeping) {
             acq_flag = false;
-            sensors_update();
-            update_ui_sensors();
+            sensors_update();           // environnementaux
+            sensors_update_motion();    // mouvement
+            update_ui_sensors(); 
         }
 
         lv_timer_handler();

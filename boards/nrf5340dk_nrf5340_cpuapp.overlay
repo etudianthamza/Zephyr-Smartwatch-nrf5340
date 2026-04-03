@@ -28,6 +28,9 @@
 &timer2 {
     status = "okay";
 };
+&timer3 {
+    status = "okay";
+};
 /* RTC */
 &pinctrl {
     i2c1_default: i2c1_default {
