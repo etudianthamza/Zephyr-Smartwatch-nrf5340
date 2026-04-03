@@ -121,7 +121,8 @@ static void enter_sleep(void)
             LOG_INF("Wake by button or touch");
             break;
         } else {
-            sensors_update();
+            sensors_update();           // température, humidité, pression
+            sensors_update_motion();    // accéléromètre, gyroscope, magnétomètre
             if (is_watch_facing_user()) {
                 LOG_INF("Wake by orientation (watch facing user)");
                 break;
@@ -520,9 +521,9 @@ int main(void)
 
         if (acq_flag && !system_sleeping) {
             acq_flag = false;
-            sensors_update();           // environnementaux
-            sensors_update_motion();    // mouvement
-            update_ui_sensors(); 
+            sensors_update();           // environmental
+            sensors_update_motion();    // motion (accel, gyro, magn);
+            update_ui_sensors();
         }
 
         lv_timer_handler();

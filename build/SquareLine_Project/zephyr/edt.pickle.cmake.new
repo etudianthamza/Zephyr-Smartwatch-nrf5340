@@ -664,7 +664,7 @@ set_target_properties(${DEVICETREE_TARGET} PROPERTIES "DT_PROP|/soc/peripheral@5
 set_target_properties(${DEVICETREE_TARGET} PROPERTIES "DT_PROP|/soc/peripheral@50000000/timer@f000|interrupts" "15;1;")
 set_target_properties(${DEVICETREE_TARGET} PROPERTIES "DT_PROP|/soc/peripheral@50000000/timer@f000|prescaler" "0")
 set_target_properties(${DEVICETREE_TARGET} PROPERTIES "DT_PROP|/soc/peripheral@50000000/timer@f000|zli" "False")
-set_target_properties(${DEVICETREE_TARGET} PROPERTIES "DT_PROP|/soc/peripheral@50000000/timer@f000|status" "disabled")
+set_target_properties(${DEVICETREE_TARGET} PROPERTIES "DT_PROP|/soc/peripheral@50000000/timer@f000|status" "okay")
 set_target_properties(${DEVICETREE_TARGET} PROPERTIES "DT_PROP|/soc/peripheral@50000000/timer@f000|compatible" "nordic,nrf-timer;")
 set_target_properties(${DEVICETREE_TARGET} PROPERTIES "DT_PROP|/soc/peripheral@50000000/timer@f000|zephyr,deferred-init" "False")
 set_target_properties(${DEVICETREE_TARGET} PROPERTIES "DT_PROP|/soc/peripheral@50000000/timer@f000|wakeup-source" "False")

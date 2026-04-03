@@ -1538,6 +1538,9 @@ zephyr_udc0: &usbd {
 &timer2 {
     status = "okay";
 };
+&timer0 {
+    status = "okay";
+};
 
 &pinctrl {
     i2c1_default: i2c1_default {

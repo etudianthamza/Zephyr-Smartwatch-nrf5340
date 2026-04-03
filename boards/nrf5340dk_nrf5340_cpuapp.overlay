@@ -21,6 +21,8 @@
 	};
 	
 };
+
+
 /* TIMERs */
 &timer1 {
     status = "okay";
@@ -28,9 +30,11 @@
 &timer2 {
     status = "okay";
 };
-&timer3 {
+&timer0 {
     status = "okay";
 };
+
+
 /* RTC */
 &pinctrl {
     i2c1_default: i2c1_default {
