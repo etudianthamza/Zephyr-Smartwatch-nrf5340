@@ -269,43 +269,12 @@
 				easydma-maxcnt-bits = < 0x10 >; /* in zephyr/dts/arm/nordic/nrf5340_cpuapp_peripherals.dtsi:161 */
 				zephyr,pm-device-runtime-auto;  /* in zephyr/dts/arm/nordic/nrf5340_cpuapp_peripherals.dtsi:163 */
 				compatible = "nordic,nrf-twim"; /* in zephyr/boards/nordic/nrf5340dk/nrf5340_cpuapp_common.dtsi:96 */
-				status = "okay";                /* in zephyr/boards/nordic/nrf5340dk/nrf5340dk_nrf5340_cpuapp.dts:81 */
-				pinctrl-0 = < &i2c1_default >;  /* in zephyr/boards/nordic/nrf5340dk/nrf5340dk_nrf5340_cpuapp.dts:82 */
-				pinctrl-1 = < &i2c1_sleep >;    /* in zephyr/boards/nordic/nrf5340dk/nrf5340dk_nrf5340_cpuapp.dts:83 */
+				status = "okay";                /* in ../../Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/boards/nrf5340dk_nrf5340_cpuapp.overlay:51 */
+				pinctrl-0 = < &i2c1_default >;  /* in ../../Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/boards/nrf5340dk_nrf5340_cpuapp.overlay:52 */
+				pinctrl-1 = < &i2c1_sleep >;    /* in ../../Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/boards/nrf5340dk_nrf5340_cpuapp.overlay:53 */
 				pinctrl-names = "default",
-				                "sleep";        /* in zephyr/boards/nordic/nrf5340dk/nrf5340dk_nrf5340_cpuapp.dts:84 */
-				clock-frequency = < 0x186a0 >;  /* in zephyr/boards/nordic/nrf5340dk/nrf5340dk_nrf5340_cpuapp.dts:85 */
-
-				/* node '/soc/peripheral@50000000/i2c@9000/hts221@5f' defined in zephyr/boards/nordic/nrf5340dk/nrf5340dk_nrf5340_cpuapp.dts:35 */
-				hts221: hts221@5f {
-					compatible = "st,hts221"; /* in zephyr/boards/nordic/nrf5340dk/nrf5340dk_nrf5340_cpuapp.dts:36 */
-					reg = < 0x5f >;           /* in zephyr/boards/nordic/nrf5340dk/nrf5340dk_nrf5340_cpuapp.dts:37 */
-				};
-
-				/* node '/soc/peripheral@50000000/i2c@9000/lis3mdl@1e' defined in zephyr/boards/nordic/nrf5340dk/nrf5340dk_nrf5340_cpuapp.dts:39 */
-				lis3mdl: lis3mdl@1e {
-					compatible = "st,lis2mdl"; /* in zephyr/boards/nordic/nrf5340dk/nrf5340dk_nrf5340_cpuapp.dts:40 */
-					reg = < 0x1e >;            /* in zephyr/boards/nordic/nrf5340dk/nrf5340dk_nrf5340_cpuapp.dts:41 */
-				};
-
-				/* node '/soc/peripheral@50000000/i2c@9000/lps25hb@5d' defined in zephyr/boards/nordic/nrf5340dk/nrf5340dk_nrf5340_cpuapp.dts:43 */
-				lps25hb: lps25hb@5d {
-					compatible = "st,lps22hh"; /* in zephyr/boards/nordic/nrf5340dk/nrf5340dk_nrf5340_cpuapp.dts:44 */
-					reg = < 0x5d >;            /* in zephyr/boards/nordic/nrf5340dk/nrf5340dk_nrf5340_cpuapp.dts:45 */
-				};
-
-				/* node '/soc/peripheral@50000000/i2c@9000/lsm6ds0@6b' defined in zephyr/boards/nordic/nrf5340dk/nrf5340dk_nrf5340_cpuapp.dts:47 */
-				lsm6ds0: lsm6ds0@6b {
-					compatible = "st,lsm6dso"; /* in zephyr/boards/nordic/nrf5340dk/nrf5340dk_nrf5340_cpuapp.dts:48 */
-					reg = < 0x6b >;            /* in zephyr/boards/nordic/nrf5340dk/nrf5340dk_nrf5340_cpuapp.dts:49 */
-				};
-
-				/* node '/soc/peripheral@50000000/i2c@9000/rv8263@51' defined in zephyr/boards/nordic/nrf5340dk/nrf5340dk_nrf5340_cpuapp.dts:87 */
-				rv8263: rv8263@51 {
-					compatible = "i2c-device"; /* in zephyr/boards/nordic/nrf5340dk/nrf5340dk_nrf5340_cpuapp.dts:88 */
-					reg = < 0x51 >;            /* in zephyr/boards/nordic/nrf5340dk/nrf5340dk_nrf5340_cpuapp.dts:89 */
-					label = "RV8263";          /* in zephyr/boards/nordic/nrf5340dk/nrf5340dk_nrf5340_cpuapp.dts:90 */
-				};
+				                "sleep";        /* in ../../Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/boards/nrf5340dk_nrf5340_cpuapp.overlay:54 */
+				clock-frequency = < 0x186a0 >;  /* in ../../Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/boards/nrf5340dk_nrf5340_cpuapp.overlay:55 */
 
 				/* node '/soc/peripheral@50000000/i2c@9000/ft5336@38' defined in zephyr/boards/shields/adafruit_2_8_tft_touch_v2/dts/adafruit_2_8_tft_touch_v2.dtsi:78 */
 				ft5336_adafruit_2_8_tft_touch_v2: ft5336@38 {
@@ -328,6 +297,37 @@
 					inverted-x;                              /* in zephyr/boards/shields/adafruit_2_8_tft_touch_v2/dts/adafruit_2_8_tft_touch_v2.dtsi:99 */
 					inverted-y;                              /* in zephyr/boards/shields/adafruit_2_8_tft_touch_v2/dts/adafruit_2_8_tft_touch_v2.dtsi:100 */
 					phandle = < 0x17 >;                      /* in zephyr/boards/shields/adafruit_2_8_tft_touch_v2/dts/adafruit_2_8_tft_touch_v2.dtsi:19 */
+				};
+
+				/* node '/soc/peripheral@50000000/i2c@9000/hts221@5f' defined in ../../Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/boards/nrf5340dk_nrf5340_cpuapp.overlay:6 */
+				hts221: hts221@5f {
+					compatible = "st,hts221"; /* in ../../Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/boards/nrf5340dk_nrf5340_cpuapp.overlay:7 */
+					reg = < 0x5f >;           /* in ../../Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/boards/nrf5340dk_nrf5340_cpuapp.overlay:8 */
+				};
+
+				/* node '/soc/peripheral@50000000/i2c@9000/lis3mdl@1e' defined in ../../Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/boards/nrf5340dk_nrf5340_cpuapp.overlay:10 */
+				lis3mdl: lis3mdl@1e {
+					compatible = "st,lis2mdl"; /* in ../../Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/boards/nrf5340dk_nrf5340_cpuapp.overlay:11 */
+					reg = < 0x1e >;            /* in ../../Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/boards/nrf5340dk_nrf5340_cpuapp.overlay:12 */
+				};
+
+				/* node '/soc/peripheral@50000000/i2c@9000/lps25hb@5d' defined in ../../Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/boards/nrf5340dk_nrf5340_cpuapp.overlay:14 */
+				lps25hb: lps25hb@5d {
+					compatible = "st,lps22hh"; /* in ../../Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/boards/nrf5340dk_nrf5340_cpuapp.overlay:15 */
+					reg = < 0x5d >;            /* in ../../Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/boards/nrf5340dk_nrf5340_cpuapp.overlay:16 */
+				};
+
+				/* node '/soc/peripheral@50000000/i2c@9000/lsm6ds0@6b' defined in ../../Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/boards/nrf5340dk_nrf5340_cpuapp.overlay:18 */
+				lsm6ds0: lsm6ds0@6b {
+					compatible = "st,lsm6dso"; /* in ../../Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/boards/nrf5340dk_nrf5340_cpuapp.overlay:19 */
+					reg = < 0x6b >;            /* in ../../Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/boards/nrf5340dk_nrf5340_cpuapp.overlay:20 */
+				};
+
+				/* node '/soc/peripheral@50000000/i2c@9000/rv8263@51' defined in ../../Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/boards/nrf5340dk_nrf5340_cpuapp.overlay:57 */
+				rv8263: rv8263@51 {
+					compatible = "i2c-device"; /* in ../../Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/boards/nrf5340dk_nrf5340_cpuapp.overlay:58 */
+					reg = < 0x51 >;            /* in ../../Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/boards/nrf5340dk_nrf5340_cpuapp.overlay:59 */
+					label = "RV8263";          /* in ../../Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/boards/nrf5340dk_nrf5340_cpuapp.overlay:60 */
 				};
 			};
 
@@ -486,7 +486,7 @@
 				max-bit-width = < 0x20 >;        /* in zephyr/dts/arm/nordic/nrf5340_cpuapp_peripherals.dtsi:309 */
 				interrupts = < 0x10 0x1 >;       /* in zephyr/dts/arm/nordic/nrf5340_cpuapp_peripherals.dtsi:310 */
 				prescaler = < 0x0 >;             /* in zephyr/dts/arm/nordic/nrf5340_cpuapp_peripherals.dtsi:311 */
-				status = "okay";                 /* in zephyr/boards/nordic/nrf5340dk/nrf5340dk_nrf5340_cpuapp.dts:55 */
+				status = "okay";                 /* in ../../Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/boards/nrf5340dk_nrf5340_cpuapp.overlay:26 */
 				phandle = < 0x10 >;              /* in zephyr/dts/vendor/nordic/nrf_common.dtsi:42 */
 			};
 
@@ -498,7 +498,7 @@
 				max-bit-width = < 0x20 >;        /* in zephyr/dts/arm/nordic/nrf5340_cpuapp_peripherals.dtsi:319 */
 				interrupts = < 0x11 0x1 >;       /* in zephyr/dts/arm/nordic/nrf5340_cpuapp_peripherals.dtsi:320 */
 				prescaler = < 0x0 >;             /* in zephyr/dts/arm/nordic/nrf5340_cpuapp_peripherals.dtsi:321 */
-				status = "okay";                 /* in zephyr/boards/nordic/nrf5340dk/nrf5340dk_nrf5340_cpuapp.dts:58 */
+				status = "okay";                 /* in ../../Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/boards/nrf5340dk_nrf5340_cpuapp.overlay:29 */
 			};
 
 			/* node '/soc/peripheral@50000000/rtc@14000' defined in zephyr/dts/arm/nordic/nrf5340_cpuapp_peripherals.dtsi:324 */
@@ -900,25 +900,25 @@
 
 		/* node '/pin-controller/i2c1_default' defined in zephyr/boards/nordic/nrf5340dk/nrf5340_cpuapp_common-pinctrl.dtsi:7 */
 		i2c1_default: i2c1_default {
-			phandle = < 0x4 >; /* in zephyr/boards/nordic/nrf5340dk/nrf5340dk_nrf5340_cpuapp.dts:82 */
+			phandle = < 0x4 >; /* in ../../Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/boards/nrf5340dk_nrf5340_cpuapp.overlay:52 */
 
 			/* node '/pin-controller/i2c1_default/group1' defined in zephyr/boards/nordic/nrf5340dk/nrf5340_cpuapp_common-pinctrl.dtsi:8 */
 			group1 {
 				psels = < 0xc000022 >,
-				        < 0xb000023 >; /* in zephyr/boards/nordic/nrf5340dk/nrf5340dk_nrf5340_cpuapp.dts:64 */
-				bias-pull-up;          /* in zephyr/boards/nordic/nrf5340dk/nrf5340dk_nrf5340_cpuapp.dts:66 */
+				        < 0xb000023 >; /* in ../../Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/boards/nrf5340dk_nrf5340_cpuapp.overlay:35 */
+				bias-pull-up;          /* in ../../Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/boards/nrf5340dk_nrf5340_cpuapp.overlay:37 */
 			};
 		};
 
 		/* node '/pin-controller/i2c1_sleep' defined in zephyr/boards/nordic/nrf5340dk/nrf5340_cpuapp_common-pinctrl.dtsi:14 */
 		i2c1_sleep: i2c1_sleep {
-			phandle = < 0x5 >; /* in zephyr/boards/nordic/nrf5340dk/nrf5340dk_nrf5340_cpuapp.dts:83 */
+			phandle = < 0x5 >; /* in ../../Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/boards/nrf5340dk_nrf5340_cpuapp.overlay:53 */
 
 			/* node '/pin-controller/i2c1_sleep/group1' defined in zephyr/boards/nordic/nrf5340dk/nrf5340_cpuapp_common-pinctrl.dtsi:15 */
 			group1 {
 				psels = < 0xc000022 >,
-				        < 0xb000023 >; /* in zephyr/boards/nordic/nrf5340dk/nrf5340dk_nrf5340_cpuapp.dts:73 */
-				low-power-enable;      /* in zephyr/boards/nordic/nrf5340dk/nrf5340dk_nrf5340_cpuapp.dts:75 */
+				        < 0xb000023 >; /* in ../../Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/boards/nrf5340dk_nrf5340_cpuapp.overlay:44 */
+				low-power-enable;      /* in ../../Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/boards/nrf5340dk_nrf5340_cpuapp.overlay:46 */
 			};
 		};
 

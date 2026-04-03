@@ -37,4 +37,5 @@ empty_file.o: /home/hamza/ncs/v3.2.1/zephyr/misc/empty_file.c \
  /home/hamza/ncs/v3.2.1/zephyr/dts/vendor/nordic/nrf5340_shared_sram_partition.dtsi \
  /home/hamza/ncs/v3.2.1/zephyr/boards/shields/adafruit_2_8_tft_touch_v2/adafruit_2_8_tft_touch_v2.overlay \
  /home/hamza/ncs/v3.2.1/zephyr/boards/shields/adafruit_2_8_tft_touch_v2/dts/adafruit_2_8_tft_touch_v2.dtsi \
- /home/hamza/ncs/v3.2.1/zephyr/include/zephyr/dt-bindings/display/ili9xxx.h
+ /home/hamza/ncs/v3.2.1/zephyr/include/zephyr/dt-bindings/display/ili9xxx.h \
+ /home/hamza/Projects_RTOS/projet_montre_connecte/neveau_dessin/SquareLine_Project/boards/nrf5340dk_nrf5340_cpuapp.overlay
