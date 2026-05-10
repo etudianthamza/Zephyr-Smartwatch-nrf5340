@@ -1,5 +1,16 @@
 # ⌚ Embedded Smartwatch Based on nRF5340
 
+## 📸 Demonstration
+
+<p align="center">
+  <img src="Demonstration_Smartwatch_12Mo.gif" width="320"/>
+</p>
+<p align="center">
+  <em>Full smartwatch demonstration — Zephyr RTOS + LVGL interface on nRF5340</em>
+</p>
+
+---
+
 ## 📌 Project Overview
 
 This project is a fully embedded smartwatch system developed using the **Nordic nRF5340-DK** board.
@@ -177,15 +188,3 @@ cd Zephyr-Smartwatch-nrf5340
 west build -b nrf5340dk_nrf5340_cpuapp
 west flash
 ```
-
----
-
-## 📸 Demonstration
-
-<p align="center">
-  <img src="Demonstration_Smartwatch_12Mo.gif" width="320"/>
-</p>
-<p align="center">
-  <em>Full smartwatch demonstration — Zephyr RTOS + LVGL interface on nRF5340</em>
-</p>
-
