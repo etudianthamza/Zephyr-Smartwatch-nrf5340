@@ -39,7 +39,7 @@ This project highlights competencies in:
 - **Adafruit 2.8" TFT Touch Shield v2**
   - Resolution: 320 × 240 pixels
   - Interface: SPI
-  - Capacitive touchscreen
+  - Resistive touchscreen
   - GUI Framework: LVGL + Squareline Studio
 
 ### 🌡️ Environmental & Motion Sensors (ST IKS01A3 Shield)
