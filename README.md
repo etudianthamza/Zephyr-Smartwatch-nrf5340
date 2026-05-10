@@ -189,13 +189,3 @@ west flash
   <em>Full smartwatch demonstration — Zephyr RTOS + LVGL interface on nRF5340</em>
 </p>
 
----
-
-## 📚 References
-
-- [Zephyr Project RTOS](https://zephyrproject.org/)
-- [LVGL — Light and Versatile Graphics Library](https://lvgl.io/)
-- [Nordic nRF5340 Product Page](https://www.nordicsemi.com/Products/nRF5340)
-- [ST IKS01A3 Shield](https://www.st.com/en/ecosystems/x-nucleo-iks01a3.html)
-- [Micro Crystal RV-8263-C8](https://www.microcrystal.com/en/products/real-time-clock-rtc-modules/rv-8263-c8/)
-- [ZSWatch — Original Project](https://github.com/jakkra/ZSWatch) by Jakob Krantz & Daniel Kampert
