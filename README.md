@@ -129,7 +129,7 @@ Zephyr-Smartwatch-nrf5340/
 - Embedded C
 - Zephyr RTOS
 - LVGL — Lightweight graphics library
-- Squareline Studio — GUI design tool
+- Squareline Studio — UI design tool
 - Bluetooth Low Energy (BLE)
 - I2C / SPI communication protocols
 - Devicetree & Overlays
